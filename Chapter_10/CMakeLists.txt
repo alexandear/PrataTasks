@@ -1,0 +1,17 @@
+project(Chapter_10)
+cmake_minimum_required(VERSION 2.8)
+aux_source_directory(. APP_SOURCES)
+
+add_executable( task_10_1 task_10_1.cpp bankAccount.cpp )
+add_executable( task_10_2 task_10_2.cpp person.cpp )
+add_executable( task_10_3 task_10_3.cpp golf.cpp )
+add_executable( task_10_4 task_10_4.cpp sales.cpp )
+add_executable( task_10_5 task_10_5.cpp stack.cpp )
+add_executable( task_10_6 task_10_6.cpp move.cpp )
+add_executable( task_10_7 task_10_7.cpp plorg.cpp )
+add_executable( task_10_8 task_10_8.cpp list.cpp )
+
+ADD_DEFINITIONS(
+    -std=c++11 # Or -std=c++0x
+    # Other flags
+)
