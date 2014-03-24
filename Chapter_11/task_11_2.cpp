@@ -9,12 +9,12 @@ int main() {
     using VECTOR::Vector;
     
     srand(time(0));     // seed random-number generator
-    double direction;
+    double direction {};
     Vector step;
     Vector result(0.0, 0.0);
-    unsigned long steps = 0;
-    double target;
-    double dstep;
+    unsigned long steps {};
+    double target {};
+    double dstep {};
     cout << "Enter target distance (q to quit): ";
     while (cin >> target) {
         cout << "Enter step length: ";

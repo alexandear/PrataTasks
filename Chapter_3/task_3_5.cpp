@@ -12,7 +12,8 @@ int main() {
     long long populationOfTheUs {};
     cin >> populationOfTheUs;
 
-    cout << "The population of the US is " << populationOfTheUs * 100.0 / worldPopulation << "% of the world population.";
+    cout << "The population of the US is " << populationOfTheUs * 100.0 / worldPopulation
+         << "% of the world population.\n";
 
     return 0;
 }

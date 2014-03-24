@@ -1,49 +1,48 @@
 #include <iostream>
 
-double* input (int &numberOfScores);
-void show (const double *golfScores, int numberOfScores);
-double average (const double *golfScores, int numberOfScores);
+const size_t MaxScores {10};
+
+double * input (size_t & nScores);
+void show (const double * golfScores, size_t nScores);
+double average (const double * golfScores, size_t nScores);
 
 int main() {
 
-    using namespace std;
-
-    double *golfScores = new double[10];
-    int numberOfScores {};
-    golfScores = input(numberOfScores);
-    show(golfScores, numberOfScores);
-    cout << "Average of scores: " << average(golfScores, numberOfScores) << endl;
+    double * golfScores = new double[MaxScores];
+    size_t nScores {};
+    golfScores = input(nScores);
+    show(golfScores, nScores);
+    std::cout << "Average of scores: " << average(golfScores, nScores) << std::endl;
 
     delete [] golfScores;
 
     return 0;
 }
 
-
-double* input (int &numberOfScores) {
-    double *golfScores = new double[10];
+double * input (size_t & nScores) {
+    double * golfScores = new double[MaxScores];
     std::cout << "Enter up to 10 golf scores (q to quit):\n";
-    int i {};
+    size_t i {};
     while (i < 10 && std::cin >> golfScores[i] && std::cin.get() != 'q') {
         ++i;
     }
-    numberOfScores = i;
+    nScores = i;
 
     return golfScores;
 }
 
-void show (const double *golfScores, int numberOfScores) {
+void show (const double * golfScores, size_t nScores) {
     std::cout << "All the scores: ";
-    for (int i = 0; i < numberOfScores; ++i) {
+    for (size_t i = 0; i < nScores; ++i) {
         std::cout << golfScores[i] << " ";
     }
-    std::cout << (numberOfScores ? "" : "list empty") << std::endl;
+    std::cout << (nScores ? "" : "list empty") << std::endl;
 }
 
-double average (const double *golfScores, int numberOfScores) {
+double average (const double * golfScores, size_t nScores) {
     double sum {};
-    for (int i = 0; i < numberOfScores; ++i) {
+    for (size_t i = 0; i < nScores; ++i) {
         sum += golfScores[i];
     }
-    return numberOfScores ? sum / numberOfScores : 0.0;
+    return nScores ? sum / nScores : 0.0;
 }

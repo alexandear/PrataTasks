@@ -33,7 +33,7 @@ int main(int argc, char * argv[]) {
         exit(EXIT_FAILURE);
     }
 
-    std::string tmp1, tmp2;
+    std::string tmp1 {}, tmp2 {};
     while (fin1 || fin2) {
         std::getline(fin1, tmp1);
         std::getline(fin2, tmp2);

@@ -15,14 +15,13 @@ Port::Port(const Port &p) {
 }
 
 Port & Port::operator =(const Port & p) {
-    if (this == &p) {
-        return *this;
+    if (this != &p) {
+        delete [] brand;
+        brand = new char[20];
+        std::strcpy(brand, p.brand);
+        std::strcpy(style, p.style);
+        bottles = p.bottles;
     }
-    delete [] brand;
-    brand = new char[20];
-    std::strcpy(brand, p.brand);
-    std::strcpy(style, p.style);
-    bottles = p.bottles;
     return *this;
 }
 

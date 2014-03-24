@@ -1,5 +1,3 @@
-#include <cctype>
-#include <cstring>
 #include <iostream>
 #include <string>
 
@@ -10,7 +8,7 @@ int main() {
     using namespace std;
 
     cout << "Enter a string (q to quit): ";
-    string str;
+    string str {};
     while (getline(cin, str)) {
         if (str.size() == 1 && str[0] == 'q') {
             break;
@@ -24,7 +22,7 @@ int main() {
 }
 
 void convertToUpper(std::string & str) {
-    for (int i = 0; i < str.size(); ++i) {
+    for (size_t i = 0; i < str.size(); ++i) {
         str[i] = toupper(str[i]);
     }
 }

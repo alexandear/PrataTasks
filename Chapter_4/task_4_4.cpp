@@ -14,8 +14,7 @@ int main() {
     getline(cin, lastName);
 
     string name = firstName + ", " + lastName;
-    cout << "Here's the information in a single string: ";
-    cout << name;
+    cout << "Here's the information in a single string: " << name << endl;
 
     return 0;
 }

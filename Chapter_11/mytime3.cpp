@@ -4,22 +4,22 @@ Time::Time() {
     hours = minutes = 0;
 }
 
-Time::Time(int h, int m ) {
+Time::Time(size_t h, size_t m ) {
     hours = h;
     minutes = m;
 }
 
-void Time::AddMin(int m) {
+void Time::AddMin(size_t m) {
     minutes += m;
-    hours += minutes / 60;
-    minutes %= 60;
+    hours += minutes / MinutesInHour;
+    minutes %= MinutesInHour;
 }
 
-void Time::AddHr(int h) {
+void Time::AddHr(size_t h) {
     hours += h;
 }
 
-void Time::Reset(int h, int m) {
+void Time::Reset(size_t h, size_t m) {
     hours = h;
     minutes = m;
 }
@@ -27,26 +27,26 @@ void Time::Reset(int h, int m) {
 Time operator+(const Time & t1, const Time & t2) {
     Time sum;
     sum.minutes = t1.minutes + t2.minutes;
-    sum.hours = t1.hours + t2.hours + sum.minutes / 60;
-    sum.minutes %= 60;
+    sum.hours = t1.hours + t2.hours + sum.minutes / Time::MinutesInHour;
+    sum.minutes %= Time::MinutesInHour;
     return sum;
 }
 
 Time operator-(const Time & t1, const Time & t2) {
     Time diff;
-    int tot1, tot2;
-    tot1 = t2.minutes + 60 * t2.hours;
-    tot2 = t1.minutes + 60 * t1.hours;
-    diff.minutes = (tot2 - tot1) % 60;
-    diff.hours = (tot2 - tot1) / 60;
+    size_t tot1 {}, tot2 {};
+    tot1 = t2.minutes + Time::MinutesInHour * t2.hours;
+    tot2 = t1.minutes + Time::MinutesInHour * t1.hours;
+    diff.minutes = (tot2 - tot1) % Time::MinutesInHour;
+    diff.hours = (tot2 - tot1) / Time::MinutesInHour;
     return diff;
 }
 
 Time operator*(const Time & t, double mult) {
     Time result;
-    long totalminutes = t.hours * mult * 60 + t.minutes * mult;
-    result.hours = totalminutes / 60;
-    result.minutes = totalminutes % 60;
+    unsigned long totalminutes = t.hours * mult * Time::MinutesInHour + t.minutes * mult;
+    result.hours = totalminutes / Time::MinutesInHour;
+    result.minutes = totalminutes % Time::MinutesInHour;
     return result;
 }
 

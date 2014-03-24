@@ -56,7 +56,7 @@ int main() {
         }
         sum += stepsArr[i];
     }
-    double average = sum / trials;
+    double average {sum / trials};
     cout << "Highest: " << highest << "\nLowest: " << lowest << "\nAverage: " << average << endl;
 
     return 0; 

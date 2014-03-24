@@ -5,12 +5,12 @@ typedef unsigned long Item;
 
 class Stack {
 private:
-    enum {MAX = 10};    // constant specific to class
+    enum {Max = 10};    // constant specific to class
     Item * pitems;      // holds stack items
     int size;           // number of elements in stack
     int top;            // index for top stack item
 public:
-    Stack(int n = MAX); // creates stack with n elements
+    Stack(int n = Max); // creates stack with n elements
     Stack(const Stack & st);
     ~Stack();
     bool isempty() const;

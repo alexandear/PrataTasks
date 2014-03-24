@@ -5,9 +5,10 @@ int main() {
     using namespace std;
 
     cout << "Enter distance in furlongs: ";
-    auto furlong = 0.0;
+    double furlong {};
     cin >> furlong;
-    cout << furlong << " furlongs = " <<  220 * furlong << " yards" << endl;
+    const int YardsInFurlong {220};
+    cout << furlong << " furlongs = " <<  YardsInFurlong * furlong << " yards\n";
     return 0;
 }
 

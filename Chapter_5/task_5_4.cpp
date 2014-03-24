@@ -4,8 +4,7 @@ int main() {
 
     using namespace std;
 
-    const double OriginalBalance = 100;
-
+    const double OriginalBalance {100};
     double balanceDaphne {OriginalBalance};
     double balanceCleo {OriginalBalance};
 

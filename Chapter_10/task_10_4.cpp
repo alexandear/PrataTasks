@@ -1,11 +1,8 @@
-#include <iostream>
 #include "sales.h"
 
 int main() {
 
-    using namespace std;
     using namespace SALES;
-
 
     double sales[] {1.0, 2.0, 3.0, 4.0};
     Sales s1(sales, 3);

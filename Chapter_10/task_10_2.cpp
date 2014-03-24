@@ -10,9 +10,9 @@ int main() {
     Person two("Smythecraft"); // use #2 with one default argument
     Person three("Dimwiddy", "Sam"); // use #2, no defaults
 
-    Person *persons = new Person[3] {one, two, three};
+    Person * persons = new Person[3] {one, two, three};
 
-    for (int i = 0; i < 3; ++i) {
+    for (size_t i = 0; i < 3; ++i) {
         cout << "Person #" << i + 1 << ":\n";
         persons[i].Show();
         cout << endl;

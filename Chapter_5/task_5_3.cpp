@@ -4,7 +4,7 @@ int main() {
 
     using namespace std;
 
-    cout << "Enter numbers. Press \"0\" to exit." << endl;
+    cout << "Enter numbers. Press \"0\" to exit.\n";
     cout << "Enter number: ";
     double number {};
     cin >> number;

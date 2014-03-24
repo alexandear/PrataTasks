@@ -45,7 +45,7 @@ int main() {
             cout << "Enter how to display books: \nin original order(o), \nin alphabetical order(a), \nin order of "
                     "increasing ratings(r), \nin order of decreasing ratings(1), \nin order of increasing price(p), "
                     "\nin order of decreasing price(2), \nfor exit type (q): ";
-            char choice;
+            char choice {};
             cin >> choice;
             while (strchr("oar1p2q", choice) == nullptr) {
                 cout << "Please enter o, a, r, 1, p, 2, or q: ";

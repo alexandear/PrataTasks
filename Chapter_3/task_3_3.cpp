@@ -4,7 +4,7 @@ int main() {
 
     using namespace std;
 
-    cout << "Enter a latitude in degrees, minutes, and seconds:" << endl;
+    cout << "Enter a latitude in degrees, minutes, and seconds:\n";
 
     cout << "First, enter the degrees: ___\b\b\b";
     int degrees {};
@@ -18,15 +18,14 @@ int main() {
     int seconds {};
     cin >> seconds;
 
-    const double secondsInMinute {60.0};
-    const double minutesInDegree {60.0};
+    const double SecondsInMinute {60.0};
+    const double MinutesInDegree {60.0};
 
     cout.setf(ios_base::fixed, ios_base::floatfield);
     cout.precision(4);
 
     cout << degrees << " degrees, " << minutes << " minutes, " << seconds << " seconds = "
-         << degrees + (minutes + seconds / secondsInMinute) / minutesInDegree;
-
+         << degrees + (minutes + seconds / SecondsInMinute) / MinutesInDegree << endl;
 
     return 0;
 }

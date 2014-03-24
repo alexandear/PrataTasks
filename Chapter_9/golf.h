@@ -1,10 +1,10 @@
 #ifndef GOLF_H_
 #define GOLF_H_
 
-const int Len = 40;
+const int StrSize {40};
 
 struct golf {
-    char fullname[Len];
+    char fullname[StrSize];
     int handicap;
 };
 

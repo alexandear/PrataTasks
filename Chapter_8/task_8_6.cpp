@@ -2,22 +2,25 @@
 #include <iostream>
 
 template <typename T>
-T maxn(T arr[], int n);
+T maxn(const T arr[], size_t n);
 
-template <> char * maxn(char * str[], int n);
+template <> char * maxn(char *const str[], size_t n);
 
 int main() {
 
     using namespace std;
 
+    const size_t IntSize {6};
     int intArr[6] {1, 4, -3, 6, 2, 8};
-    cout << "Max of int array: " << maxn(intArr, (sizeof intArr / sizeof(int))) << endl;
+    cout << "Max of int array: " << maxn(intArr, IntSize) << endl;
 
-    double doubleArr[4] {0.2, 5.1, -5.3, 2.9};
-    cout << "Max of double array: " << maxn(doubleArr, (sizeof doubleArr / sizeof(double))) << endl;
+    const size_t DoubleSize {4};
+    double doubleArr[DoubleSize] {0.2, 5.1, -5.3, 2.9};
+    cout << "Max of double array: " << maxn(doubleArr, DoubleSize) << endl;
 
-    char * days[5] {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
-    char * longest = maxn(days, (sizeof days / sizeof(char *)));
+    const size_t Days {5};
+    char * days[Days] {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
+    char * longest = maxn(days, Days);
     cout << "Longest string: " << longest << endl;
 
     delete [] longest;
@@ -26,9 +29,9 @@ int main() {
 }
 
 template <typename T>
-T maxn(T arr[], int n) {
+T maxn(const T arr[], size_t n) {
     T max {arr[0]};
-    for (int i = 0; i < n; ++i) {
+    for (size_t i = 0; i < n; ++i) {
         if (arr[i] > max) {
             max = arr[i];
         }
@@ -36,9 +39,9 @@ T maxn(T arr[], int n) {
     return max;
 }
 
-template <> char * maxn(char * str[], int n) {
-    char * maxStr = str[n - 1];
-    for (int i = 0; i < n; ++i) {
+template <> char * maxn(char *const str[], size_t n) {
+    char * maxStr = str[0];
+    for (size_t i = 0; i < n; ++i) {
         if (strlen(str[i]) > strlen(maxStr)) {
             maxStr = str[i];
         }

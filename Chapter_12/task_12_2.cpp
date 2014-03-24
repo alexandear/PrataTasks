@@ -1,8 +1,10 @@
 #include <iostream>
-using namespace std;
 #include "string2.h"
 
 int main() {
+
+    using std::cin;
+    using std::cout;
 
     String s1(" and I am a C++ student.");
     String s2 = "Please enter your name: ";

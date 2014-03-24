@@ -4,8 +4,8 @@
 #include <cstring>
 
 class Plorg {
-    const static int Size = 19;
-    char name_[Size];
+    const static int StrSize = 19;
+    char name_[StrSize];
     int ci_;
 public:
     Plorg(const char * name = "Plorga", int ci = 50);

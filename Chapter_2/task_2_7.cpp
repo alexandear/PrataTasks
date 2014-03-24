@@ -1,6 +1,6 @@
 #include <iostream>
 
-void displayTime(double hours, double minutes) {
+void displayTime(int hours, int minutes) {
     std::cout << "Time: " << hours << ":" << minutes;
 }
 
@@ -9,9 +9,9 @@ int main() {
     using namespace std;
 
     cout << "Enter the number of hours: ";
-    auto hours = 0;
+    int hours {};
     cin >> hours;
-    auto minutes = 0;
+    int minutes {};
     cout << "Enter the number of minutes: ";
     cin >> minutes;
     displayTime(hours, minutes);

@@ -1,6 +1,6 @@
 #include <iostream>
 
-const int Size = 5;
+const size_t Size {5};
 
 template <typename T>
 T max5(T arr[Size]);
@@ -21,7 +21,7 @@ int main() {
 template <typename T>
 T max5(T arr[Size]) {
     T max {arr[0]};
-    for (int i = 0; i < Size; ++i) {
+    for (size_t i = 0; i < Size; ++i) {
         if (arr[i] > max) {
             max = arr[i];
         }

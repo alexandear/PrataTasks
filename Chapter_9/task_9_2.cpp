@@ -1,17 +1,17 @@
 #include <iostream>
 #include <string>
 
-void strcount(const std::string & str);
+void strCount(const std::string & str);
 
 int main() {
 
-    using namespace std;\
+    using namespace std;
 
-    string input;
+    string input {};
     cout << "Enter a line:\n";
     getline(cin, input);
     while (input != "") {
-        strcount(input);
+        strCount(input);
         cout << "Enter next line (empty line to quit):\n";
         getline(cin, input);
     }
@@ -20,13 +20,12 @@ int main() {
     return 0;
 }
 
-void strcount(const std::string & str) {
-    using namespace std;
+void strCount(const std::string & str) {
     static int total {};
-    int count {};
+    size_t count {};
 
-    cout << "\"" << str <<"\" contains ";
+    std::cout << "\"" << str <<"\" contains ";
     count = str.size();
     total += count;
-    cout << count << " characters\n" << total << " characters total\n";
+    std::cout << count << " characters\n" << total << " characters total\n";
 }

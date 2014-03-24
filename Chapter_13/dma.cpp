@@ -19,12 +19,12 @@ abstractDMA::~abstractDMA() {
 }
 
 abstractDMA & abstractDMA::operator=(const abstractDMA & rs) {
-    if (this == &rs)
-        return *this;
-    delete [] label;
-    label = new char[std::strlen(rs.label) + 1];
-    std::strcpy(label, rs.label);
-    rating = rs.rating;
+    if (this != &rs) {
+        delete [] label;
+        label = new char[std::strlen(rs.label) + 1];
+        std::strcpy(label, rs.label);
+        rating = rs.rating;
+    }
     return *this;
 }
 
@@ -85,12 +85,13 @@ hasDMA::~hasDMA() {
 }
 
 hasDMA & hasDMA::operator=(const hasDMA & hs) {
-    if (this == &hs)
-        return *this;
-    abstractDMA::operator=(hs);  // copy base portion
-    delete [] style;         // prepare for new style
-    style = new char[std::strlen(hs.style) + 1];
-    std::strcpy(style, hs.style);
+    if (this != &hs) {
+        abstractDMA::operator=(hs);  // copy base portion
+        delete [] style;         // prepare for new style
+        style = new char[std::strlen(hs.style) + 1];
+        std::strcpy(style, hs.style);
+
+    }
     return *this;
 }
     

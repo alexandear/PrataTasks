@@ -9,7 +9,7 @@ int main() {
     using std::endl;
 
     Stack st; // create an empty stack
-    char ch;
+    char ch {};
     customer cust;
     double total {};
 

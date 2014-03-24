@@ -10,7 +10,5 @@ add_executable( task_17_5 task_17_5.cpp )
 add_executable( task_17_6 task_17_6.cpp emp.cpp )
 add_executable( task_17_7 task_17_7.cpp )
 
-ADD_DEFINITIONS(
-    -std=c++11 # Or -std=c++0x
-    # Other flags
-)
+add_definitions(-std=c++11)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wno-long-long -pedantic")

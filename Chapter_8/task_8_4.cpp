@@ -4,13 +4,13 @@ using namespace std;
 
 
 struct stringy {
-    char * str; // points to a string
-    int ct; // length of string (not counting '\0')
+    char * str;     // points to a string
+    int ct;         // length of string (not counting '\0')
 };
 
-void set(stringy &beany, const char *str);
-void show(const stringy &beany, int n = 1);
-void show(const char *str, int n = 1);
+void set(stringy & beany, const char * str);
+void show(const stringy & beany, size_t n = 1);
+void show(const char * str, size_t n = 1);
 
 int main() {
 
@@ -33,20 +33,20 @@ int main() {
     return 0;
 }
 
-void set(stringy &beany, const char *str) {
+void set(stringy & beany, const char * str) {
     beany.str = new char[strlen(str)];
     strcpy(beany.str, str);
     beany.ct = strlen(str);
 }
 
-void show(const stringy &beany, int n) {
-    for (int i = 0; i < n; i++) {
+void show(const stringy &beany, size_t n) {
+    for (size_t i = 0; i < n; i++) {
         cout << beany.str << endl;
     }
 }
 
-void show(const char *str, int n) {
-    for (int i = 0; i < n; i++) {
+void show(const char * str, size_t n) {
+    for (size_t i = 0; i < n; i++) {
         cout << str << endl;
     }
 }

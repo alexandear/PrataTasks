@@ -17,7 +17,7 @@ int main() {
 }
 
 bool isPalindrome(const string & str) {
-    string tmpStr;
+    string tmpStr {};
     for_each(str.begin(), str.end(), [&](char ch){
         if (isalpha(ch)) {
             tmpStr.push_back(tolower(ch));

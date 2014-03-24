@@ -3,7 +3,7 @@
 #include <iostream>
 #include "queue.h"
 
-const int MIN_PER_HR = 60;
+const int MinutesInHour {60};
 
 bool newcustomer(double x); // is there a new customer?
 
@@ -18,31 +18,31 @@ int main() {
 
     cout << "Case Study: Bank of Heather Automatic Teller\n";
     cout << "Enter maximum size of queue: ";
-    int qs;
+    int qs {};
     cin >> qs;
     Queue line(qs);         // line queue holds up to qs people
 
     cout << "Enter the number of simulation hours (>100): ";
-    int hours;              //  hours of simulation
+    int hours {};           //  hours of simulation
     cin >> hours;
     // simulation will run 1 cycle per minute
-    long cyclelimit = MIN_PER_HR * hours; // # of cycles
+    long cyclelimit = MinutesInHour * hours; // # of cycles
 
     cout << "Enter the average number of customers per hour: ";
-    double perhour;         //  average # of arrival per hour
+    double perhour{};       //  average # of arrival per hour
     cin >> perhour;
-    double min_per_cust;    //  average time between arrivals
-    min_per_cust = MIN_PER_HR / perhour;
+    double min_per_cust{};  //  average time between arrivals
+    min_per_cust = MinutesInHour / perhour;
 
-    long turnaways = 0;     //  turned away by full queue
-    long customers = 0;     //  joined the queue
-    long served = 0;        //  served during the simulation
-    long sum_line = 0;      //  cumulative line length
-    int wait_time = 0;      //  time until autoteller is free
-    long line_wait = 0;     //  cumulative time in line
+    long turnaways {};     //  turned away by full queue
+    long customers {};     //  joined the queue
+    long served {};        //  served during the simulation
+    long sum_line {};      //  cumulative line length
+    int wait_time {};      //  time until autoteller is free
+    long line_wait {};     //  cumulative time in line
 
-    double averagewait = 0.0;
-    int cnt = 0;
+    double averagewait {};
+    int cnt {};
     do {
         Item temp;              //  new customer data
         turnaways = 0;     //  turned away by full queue
@@ -92,8 +92,7 @@ int main() {
     } else
         cout << "No customers!\n";
     cout << "Done!\n";
-    // cin.get();
-    // cin.get();
+
     return 0;
 }
 

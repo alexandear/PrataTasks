@@ -12,7 +12,9 @@ int main() {
     double liters {};
     cin >> liters;
 
-    cout << "Your car has gotten " << liters * 100.0 / kilometers << " liters per 100 kilometers";
+    const double Kilometers {100.0};
+    cout << "Your car has gotten " << liters * Kilometers / kilometers
+         << " liters per 100 kilometers\n";
 
     return 0;
 }

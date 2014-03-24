@@ -1,10 +1,11 @@
 #include <iostream>
-using namespace std;
 #include "classic2.h"
 
 void Bravo(const Cd & disk);
 
 int main() {
+
+    using namespace std;
 
     Cd c1("Beatles", "Capitol", 14, 35.5);
     Classic c2 = Classic("Piano Sonata in B flat, Fantasia in C",

@@ -15,9 +15,10 @@ int main() {
 
     std::srand(static_cast<unsigned>(std::time(0)));
 
-    int vectorSizes[3] = {100000, 1000000, 10000000};
+    const size_t Experiments = 3;
+    int vectorSizes[Experiments] {100000, 1000000, 10000000};
 
-    for (size_t i = 0; i < 3; ++i) {
+    for (size_t i = 0; i < Experiments; ++i) {
         cout << "For vector size: " << vectorSizes[i] << endl;
 
         vector<int> vi0(vectorSizes[i]);

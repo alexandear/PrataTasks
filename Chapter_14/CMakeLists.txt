@@ -8,7 +8,5 @@ add_executable( task_14_3 task_14_3.cpp workermi.cpp )
 add_executable( task_14_4 task_14_4.cpp personmi.cpp )
 add_executable( task_14_5 task_14_5.cpp emp.cpp )
 
-ADD_DEFINITIONS(
-    -std=c++11 # Or -std=c++0x
-    # Other flags
-)
+add_definitions(-std=c++11)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wno-long-long -pedantic")

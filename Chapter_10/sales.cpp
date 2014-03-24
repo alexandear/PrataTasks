@@ -2,7 +2,7 @@
 #include <iostream>
 
 SALES::Sales::Sales() {
-    for (int i = 0; i < QUARTERS; ++i) {
+    for (size_t i = 0; i < Quarters; ++i) {
         sales[i] = 0.0;
     }
     average = max = min = 0.0;
@@ -12,9 +12,9 @@ SALES::Sales::Sales() {
 // to the sales member of s and computes and stores the
 // average, maximum, and minimum values of the entered items;
 // remaining elements of sales, if any, set to 0
-SALES::Sales::Sales(const double ar[], int n) {
-    int minQn {(QUARTERS < n) ? QUARTERS : n};
-    for (int i = 0; i < QUARTERS; ++i) {
+SALES::Sales::Sales(const double ar[], size_t n) {
+    size_t minQn {(Quarters < n) ? Quarters : n};
+    for (size_t i = 0; i < Quarters; ++i) {
         if (i < minQn) {
             sales[i] = ar[i];
         } else {
@@ -24,7 +24,7 @@ SALES::Sales::Sales(const double ar[], int n) {
     min = sales[0];
     max = sales[0];
     double sum {};
-    for (int i = 0; i < minQn; ++i) {
+    for (size_t i = 0; i < minQn; ++i) {
         if (sales[i] < min) {
             min = sales[i];
         }
@@ -42,10 +42,10 @@ SALES::Sales::Sales(const double ar[], int n) {
 // average, maximum, and minimum values
 void SALES::Sales::setSales() {
     std::cout << "Enter sales:\n";
-    double salesArr[QUARTERS] {};
-    int i {};
-    while(i < QUARTERS && std::cin >> salesArr[i] && ++i);
-    *this = Sales(salesArr, QUARTERS);
+    double salesArr[Quarters] {};
+    size_t i {};
+    while(i < Quarters && std::cin >> salesArr[i] && ++i);
+    *this = Sales(salesArr, Quarters);
 }
 
 // display all information in structure s
@@ -53,7 +53,7 @@ void SALES::Sales::showSales() const {
     using std::cout;
     using std::endl;
     cout << "Sales: ";
-    for (int i = 0; i < QUARTERS; ++i) {
+    for (size_t i = 0; i < Quarters; ++i) {
         cout << sales[i] << " ";
     }
     cout << "\nAverage: " << average << endl;

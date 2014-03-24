@@ -2,10 +2,10 @@
 #include <iostream>
 using namespace std;
 
-const int SLEN = 30;
+const size_t StrSize {30};
 struct student {
-    char fullname[SLEN];
-    char hobby[SLEN];
+    char fullname[StrSize];
+    char hobby[StrSize];
     int ooplevel;
 };
 
@@ -16,7 +16,7 @@ struct student {
 // the array or upon encountering a blank line for the student
 // name. The function returns the actual number of array elements
 // filled.
-int getinfo(student pa[], int n);
+size_t getinfo(student pa[], size_t n);
 
 // display1() takes a student structure as an argument
 // and displays its contents
@@ -29,7 +29,7 @@ void display2(const student * ps);
 // display3() takes the address of the first element of an array
 // of student structures and the number of array elements as
 // arguments and displays the contents of the structures
-void display3(const student pa[], int n);
+void display3(const student pa[], size_t n);
 
 int main() {
 
@@ -39,9 +39,9 @@ int main() {
     while (cin.get() != '\n')
         continue;
     student * ptr_stu = new student[class_size];
-    int entered = getinfo(ptr_stu, class_size);
+    size_t entered = getinfo(ptr_stu, class_size);
 
-    for (int i = 0; i < entered; i++) {
+    for (size_t i = 0; i < entered; i++) {
         display1(ptr_stu[i]);
         display2(&ptr_stu[i]);
     }
@@ -52,17 +52,17 @@ int main() {
     return 0;
 }
 
-int getinfo(student pa[], int n) {
-    int i {};
+size_t getinfo(student pa[], size_t n) {
+    size_t i {};
     for (; i < n; i++) {
         cout << "Enter info about " << (i + 1) << " student:\n";
         cout << "Full name: ";
-        cin.getline(pa[i].fullname, SLEN);
+        cin.getline(pa[i].fullname, StrSize);
         if (!strcmp(pa[i].fullname, "")) {
             break;
         }
         cout << "Hobby: ";
-        cin.getline(pa[i].hobby, SLEN);
+        cin.getline(pa[i].hobby, StrSize);
         cout << "OOP level: ";
         while (!(cin >> pa[i].ooplevel)) {
             cin.clear();
@@ -88,8 +88,8 @@ void display2(const student * ps) {
 }
 
 
-void display3(const student pa[], int n) {
-    for (int i = 0; i < n; ++i) {
+void display3(const student pa[], size_t n) {
+    for (size_t i = 0; i < n; ++i) {
         display1(pa[i]);
     }
 }

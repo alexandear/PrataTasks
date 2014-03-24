@@ -15,12 +15,10 @@ void setgolf(golf & g, const char * name, int hc) {
 // and sets the members of g to the values entered
 // returns 1 if name is entered, 0 if name is empty string
 int setgolf(golf & g) {
-    using std::cin;
-    using std::cout;
-    cout << "Enter name: ";
-    cin.getline(g.fullname, Len);
-    cout << "Enter handicap: ";
-    cin >> g.handicap;
+    std::cout << "Enter name: ";
+    std::cin.getline(g.fullname, StrSize);
+    std::cout << "Enter handicap: ";
+    std::cin >> g.handicap;
     return strcmp(g.fullname, "") ? 1 : 0;
 }
 

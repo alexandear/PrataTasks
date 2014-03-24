@@ -1,10 +1,10 @@
 #include <iostream>
 
-template <typename T>            // template A
-T SumArray(T arr[], int n);
+template <typename T>
+T SumArray(T const arr[], size_t n);
 
-template <typename T>            // template B
-T SumArray(T * arr[], int n);
+template <typename T>
+T SumArray(T * const arr[], size_t n);
 
 struct debts {
     char name[50];
@@ -13,40 +13,43 @@ struct debts {
 
 int main() {
 
-    using namespace std;
+    using std::cout;
+    using std::endl;
 
-    int things[6] = {13, 31, 103, 301, 310, 130};
-    struct debts mr_E[3] = {
+    const size_t Things {6};
+    int things[Things] {13, 31, 103, 301, 310, 130};
+
+    const size_t Debts {3};
+    debts mr_E[Debts] {
         {"Ima Wolfe", 2400.0},
         {"Ura Foxe", 1300.0},
         {"Iby Stout", 1800.0}
     };
-    double * pd[3];
 
-
-    for (int i = 0; i < 3; i++) {
+    double * pd[Debts];
+    for (size_t i = 0; i < Debts; i++) {
         pd[i] = &mr_E[i].amount;
     }
 
-    cout << "Total number of Mr. E's things: " << SumArray(things, 6) << endl;
-    cout << "All of Mr. E's debts: " << SumArray(pd, 3) << endl;
+    cout << "Total number of Mr. E's things: " << SumArray(things, Things) << endl;
+    cout << "All of Mr. E's debts: " << SumArray(pd, Debts) << endl;
 
     return 0;
 }
 
 template <typename T>
-T SumArray(T arr[], int n) {
+T SumArray(T const arr[], size_t n) {
     T sum {};
-    for (int i = 0; i < n; i++) {
+    for (size_t i = 0; i < n; i++) {
         sum += arr[i];
     }
     return sum;
 }
 
 template <typename T>
-T SumArray(T * arr[], int n) {
+T SumArray(T * const  arr[], size_t n) {
     T sum {};
-    for (int i = 0; i < n; i++) {
+    for (size_t i = 0; i < n; i++) {
         sum += *arr[i];
     }
     return sum;

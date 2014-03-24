@@ -5,14 +5,14 @@ int main() {
     using namespace std;
 
     cout << "Enter number of rows: ";
-    int rows {};
+    size_t rows {};
     cin >> rows;
 
-    for (int i = 0; i < rows; ++i) {
-        for (int j = 0; j < rows - i - 1; ++j) {
+    for (size_t i = 0; i < rows; ++i) {
+        for (size_t j = 0; j < rows - i - 1; ++j) {
             cout << ".";
         }
-        for (int k = 0; k < i + 1; ++k) {
+        for (size_t k = 0; k < i + 1; ++k) {
             cout << "*";
         }
         cout << endl;

@@ -5,7 +5,7 @@ int main() {
 
     using std::cout;
 
-    const int Size = 4;
+    const size_t Size {4};
     BankAccount none;
     none.show();
 
@@ -17,7 +17,7 @@ int main() {
     };
 
     cout << "\nBank accounts:\n";
-    for (int i = 0; i < Size; ++i) {
+    for (size_t i = 0; i < Size; ++i) {
         array[i].show();
     }
 

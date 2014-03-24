@@ -12,7 +12,7 @@ int main() {
     using std::cin;
     using std::endl;
     
-    double x, y, z;
+    double x {}, y {}, z {};
 
     cout << "Enter two numbers: ";
     while (cin >> x >> y) {

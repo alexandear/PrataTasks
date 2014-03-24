@@ -10,7 +10,7 @@ struct Pizza {
 int main() {
 
     using namespace std;
-    Pizza *havaiska = new Pizza;
+    Pizza * havaiska = new Pizza;
 
     cout << "Enter the name of the pizza company: ";
     getline(cin, havaiska->name);
@@ -25,6 +25,8 @@ int main() {
     cout << "Name: " << havaiska->name << endl;
     cout << "Diameter: " << havaiska->diameter << endl;
     cout << "Weight: " << havaiska->weight << endl;
+
+    delete havaiska;
 
     return 0;
 }

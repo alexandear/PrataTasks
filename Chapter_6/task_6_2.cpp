@@ -6,20 +6,21 @@ int main() {
 
     using namespace std;
 
-    array <double, 10> donationValues;
+    const size_t Size {10};
+    array <double, Size> donationValues;
 
-    int i {};
-    cout << "Enter up to 10 double values:\n";
+    size_t i {};
+    cout << "Enter up to " << Size << " double values:\n";
     double sum {};
-    while (cin >> donationValues.at(i) && i < 9) {
-        sum += donationValues.at(i);
+    while (cin >> donationValues.at(i) && i < Size - 1) {
+        sum += donationValues[i];
         ++i;
     }
 
-    double average = sum/i;
+    double average {sum / i};
     cout << "The average of the numbers: " << average << endl;
 
-    int cnt {};
+    size_t cnt {};
     for (auto val : donationValues) {
         if (val > average) {
            ++cnt;

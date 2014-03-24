@@ -20,14 +20,13 @@ VintagePort::VintagePort(const VintagePort & vp) : Port(vp) {
 }
 
 VintagePort & VintagePort::operator=(const VintagePort & vp) {
-    if (this == &vp) {
-        return *this;
+    if (this != &vp) {
+        Port::operator =(vp);
+        delete [] nickname;
+        nickname = new char[20];
+        std::strcpy(nickname, vp.nickname);
+        year = vp.year;
     }
-    Port::operator =(vp);
-    delete [] nickname;
-    nickname = new char[20];
-    std::strcpy(nickname, vp.nickname);
-    year = vp.year;
     return *this;
 }
 

@@ -8,9 +8,7 @@
 using ArrayInt = std::valarray<int>;
 using PairArray = Pair<ArrayInt, ArrayInt>;
 
-class Wine : std::string, PairArray
-{
-private:
+class Wine : std::string, PairArray {
     int years;
 public:
     Wine(const char * l, int y, const int yr[], const int bot[]);

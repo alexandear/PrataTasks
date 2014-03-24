@@ -5,9 +5,9 @@
 // to the sales member of s and computes and stores the
 // average, maximum, and minimum values of the entered items;
 // remaining elements of sales, if any, set to 0
-void SALES::setSales(Sales & s, const double ar[], int n) {
-    int min {(QUARTERS < n) ? QUARTERS : n};
-    for (int i = 0; i < QUARTERS; ++i) {
+void SALES::setSales(Sales & s, const double ar[], size_t n) {
+    size_t min {(Quarters < n) ? Quarters : n};
+    for (size_t i = 0; i < Quarters; ++i) {
         if (i < min) {
             s.sales[i] = ar[i];
         } else {
@@ -17,7 +17,7 @@ void SALES::setSales(Sales & s, const double ar[], int n) {
     s.min = s.sales[0];
     s.max = s.sales[0];
     double sum {};
-    for (int i = 0; i < min; ++i) {
+    for (size_t i = 0; i < min; ++i) {
         if (s.sales[i] < s.min) {
             s.min = s.sales[i];
         }
@@ -34,16 +34,16 @@ void SALES::setSales(Sales & s, const double ar[], int n) {
 // average, maximum, and minimum values
 void SALES::setSales(Sales & s) {
     std::cout << "Enter sales:\n";
-    double sales[QUARTERS] {};
-    int i {};
-    while(i < QUARTERS && std::cin >> sales[i] && ++i);
-    setSales(s, sales, QUARTERS);
+    double sales[Quarters] {};
+    size_t i {};
+    while(i < Quarters && std::cin >> sales[i] && ++i);
+    setSales(s, sales, Quarters);
 }
 
 // display all information in structure s
 void SALES::showSales(const Sales & s) {
     std::cout << "Sales: ";
-    for (int i = 0; i < QUARTERS; ++i) {
+    for (size_t i = 0; i < Quarters; ++i) {
         std::cout << s.sales[i] << " ";
     }
     std::cout << "\nAverage: " << s.average << std::endl;

@@ -5,9 +5,10 @@ int main() {
     using namespace std;
 
     cout << "Enter your age: ";
-    auto age = 0;
+    int age {};
     cin >> age;
-    cout << "Your age in month is " << 12 * age << endl;
+    const int MonthsInYear {12};
+    cout << "Your age in months is " << MonthsInYear * age << endl;
 
     return 0;
 }

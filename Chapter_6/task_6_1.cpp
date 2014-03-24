@@ -7,8 +7,8 @@ int main() {
 
     char ch {}, tmp {};
     ch = cin.get();
-    while(ch != '@') {
-        if(!isdigit(ch)) {
+    while (ch != '@') {
+        if (!isdigit(ch)) {
             tmp = islower(ch) ? toupper(ch) : tolower(ch);
             cout.put(tmp);
         }

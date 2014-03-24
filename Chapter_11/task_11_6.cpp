@@ -6,7 +6,7 @@ int main() {
     using std::cout;
     using std::cin;
     
-    const int Size = 6;
+    const size_t Size {6};
     Stonewt stones[Size] {
         Stonewt(275),
         Stonewt(285.7, Stonewt::STONE),
@@ -14,7 +14,7 @@ int main() {
     };
 
     double pounds {};
-    for (int i = 3; i < Size; ++i) {
+    for (size_t i = 3; i < Size; ++i) {
         cout << "Enter pounds (" << i << "): ";
         cin >> pounds;
         stones[i] = pounds;
@@ -24,7 +24,7 @@ int main() {
     Stonewt max = stones[0];
     int greaterEqual{};
     Stonewt stn11(11, 0.0);
-    for (int i = 0; i < Size; ++i) {
+    for (size_t i = 0; i < Size; ++i) {
         if (stones[i] < min) {
             min = stones[i];
         }

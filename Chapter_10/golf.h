@@ -2,8 +2,8 @@
 #define GOLF_H_
 
 class golf {
-    const static int Len = 40;
-    char fullname_[Len];
+    const static int StrSize {40};
+    char fullname_[StrSize];
     int handicap_;
 public:
     golf(const char * name, int hc);

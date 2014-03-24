@@ -3,8 +3,6 @@
 
 int main() {
 
-    using namespace std;
-
     golf ann;
     setgolf(ann, "Ann Birdfree", 24);
     showgolf(ann);
@@ -13,7 +11,7 @@ int main() {
     if (setgolf(andy)) {
         showgolf(andy);
     } else {
-        cout << "Name is blank\n";
+        std::cout << "Name is blank\n";
     }
 
     return 0;

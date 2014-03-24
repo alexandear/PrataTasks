@@ -4,7 +4,7 @@ int main() {
 
     using namespace std;
 
-    cout << "Enter two integers." << endl;
+    cout << "Enter two integers.\n";
     cout << "First: ";
     int first {};
     cin >> first;
@@ -16,7 +16,8 @@ int main() {
     for (int i = first; i <= second; ++i) {
         sum += i;
     }
-    cout << "The sum of two integers between " << first << " and " << second << " is " << sum;
+    cout << "The sum of two integers between " << first
+         << " and " << second << " is " << sum << endl;
 
     return 0;
 }

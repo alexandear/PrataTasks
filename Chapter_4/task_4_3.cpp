@@ -5,22 +5,21 @@ int main() {
 
     using namespace std;
 
-    const int nameSize = 20;
+    const int NameSize {20};
 
     cout << "Enter your first name: ";
-    char firstName[nameSize] {};
-    cin.getline(firstName, nameSize);
+    char firstName[NameSize] {};
+    cin.getline(firstName, NameSize);
 
     cout << "Enter your last name: ";
-    char lastName[nameSize] {};
-    cin.getline(lastName, nameSize);
+    char lastName[NameSize] {};
+    cin.getline(lastName, NameSize);
 
-    char name[nameSize * 2 + 3] {};
+    char name[NameSize * 2 + 3] {};
     strcat(name, lastName);
     strcat(name, ", ");
     strcat(name, firstName);
-    cout << "Here's the information in a single string: ";
-    cout << name;
+    cout << "Here's the information in a single string: " << name << endl;
 
     return 0;
 }

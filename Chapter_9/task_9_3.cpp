@@ -19,7 +19,7 @@ int main() {
     strcpy(ch1[1].dross, "Dross 2");
     ch1[1].slag = 9;
 
-    for (int i = 0; i < 2; ++i) {
+    for (size_t i = 0; i < 2; ++i) {
         cout << "Dross: " << ch1[i].dross << endl;
         cout << "Slag: " << ch1[i].slag << endl;
     }
@@ -32,10 +32,14 @@ int main() {
     strcpy(ch2[1].dross, "Dross 4");
     ch2[1].slag = 19;
 
-    for (int i = 0; i < 2; ++i) {
+    for (size_t i = 0; i < 2; ++i) {
         cout << "Dross: " << ch2[i].dross << endl;
         cout << "Slag: " << ch2[i].slag << endl;
     }
+
+    delete ch1;
+    delete [] buffer2;
+    delete ch2;
 
     return 0;
 }

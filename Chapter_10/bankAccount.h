@@ -9,7 +9,8 @@ class BankAccount {
     double balance_;
 public:
     BankAccount();
-    BankAccount(const std::string &name, const std::string &accountNumber, double balance = 0.0);
+    BankAccount(const std::string &name, const std::string & accountNumber,
+                double balance = 0.0);
     ~BankAccount();
 
     void show() const;

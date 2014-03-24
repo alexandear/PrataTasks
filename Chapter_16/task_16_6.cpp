@@ -3,7 +3,7 @@
 #include <iostream>
 #include <queue>
 
-const int MIN_PER_HR = 60;
+const int MinutesInHour {60};
 
 class Customer {
     long arrive;
@@ -32,33 +32,33 @@ int main() {
 
     cout << "Case Study: Bank of Heather Automatic Teller\n";
     cout << "Enter maximum size of queue: ";
-    int qs;
+    size_t qs {};
     cin >> qs;
     std::queue<Customer> line;         // line queue holds up to qs people
 
     cout << "Enter the number of simulation hours: ";
-    int hours;              //  hours of simulation
+    int hours {};              //  hours of simulation
     cin >> hours;
     // simulation will run 1 cycle per minute
-    long cyclelimit = MIN_PER_HR * hours; // # of cycles
+    long cyclelimit {MinutesInHour * hours}; // # of cycles
 
     cout << "Enter the average number of customers per hour: ";
-    double perhour;         //  average # of arrival per hour
+    double perhour {};         //  average # of arrival per hour
     cin >> perhour;
-    double min_per_cust;    //  average time between arrivals
-    min_per_cust = MIN_PER_HR / perhour;
+    double min_per_cust {};    //  average time between arrivals
+    min_per_cust = MinutesInHour / perhour;
 
     Customer temp;          //  new customer data
-    long turnaways = 0;     //  turned away by full queue
-    long customers = 0;     //  joined the queue
-    long served = 0;        //  served during the simulation
-    long sum_line = 0;      //  cumulative line length
-    int wait_time = 0;      //  time until autoteller is free
-    long line_wait = 0;     //  cumulative time in line
+    long turnaways {};      //  turned away by full queue
+    long customers {};      //  joined the queue
+    long served {};         //  served during the simulation
+    long sum_line {};       //  cumulative line length
+    int wait_time {};       //  time until autoteller is free
+    long line_wait {};      //  cumulative time in line
 
 
 // running the simulation
-    for (int cycle = 0; cycle < cyclelimit; cycle++) {
+    for (long cycle = 0; cycle < cyclelimit; cycle++) {
 
         if (newcustomer(min_per_cust)) { // have newcomer
 

@@ -57,8 +57,7 @@ public:
 };
 
 // multiple inheritance
-class SingingWaiter : public Singer, public Waiter
-{
+class SingingWaiter : public Singer, public Waiter {
 protected:
     void Data() const;
     void Get();

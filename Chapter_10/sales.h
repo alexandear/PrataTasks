@@ -1,12 +1,13 @@
 #ifndef SALES_H_
 #define SALES_H_
+#include <iostream>
 
 namespace SALES {
 
     class Sales {
     
-        const int static QUARTERS = 4;
-        double sales[QUARTERS];
+        const size_t static Quarters {4};
+        double sales[Quarters];
         double average;
         double max;
         double min;
@@ -18,7 +19,7 @@ namespace SALES {
         // to the sales member of s and computes and stores the
         // average, maximum, and minimum values of the entered items;
         // remaining elements of sales, if any, set to 0
-        Sales(const double ar[], int n);
+        Sales(const double ar[], size_t n);
 
         // gathers sales for 4 quarters interactively, stores them
         // in the sales member of s and computes and stores the

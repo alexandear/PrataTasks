@@ -1,4 +1,3 @@
-// stack.h -- class definition for the stack ADT
 #ifndef STACK_H_
 #define STACK_H_
 
@@ -11,8 +10,8 @@ typedef customer Item;
 
 class Stack {
 private:
-    enum {MAX = 10};    // constant specific to class
-    Item items[MAX];    // holds stack items
+    enum {Max = 10};    // constant specific to class
+    Item items[Max];    // holds stack items
     int top;            // index for top stack item
 public:
     Stack();

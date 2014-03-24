@@ -12,9 +12,7 @@ public:
     Complex operator -(const Complex & c) const;
     Complex operator *(const Complex & c) const;
     Complex operator *(double value) const;
-    friend Complex operator*(double value, const Complex & c) {
-        return c * value;
-    }
+    friend Complex operator*(double value, const Complex & c) { return c * value; }
     Complex operator ~() const;
     friend std::ostream & operator <<(std::ostream & os, const Complex & c);
     friend std::istream & operator >>(std::istream & is, Complex & c);

@@ -3,9 +3,9 @@
 #include <string>
 
 class Person {
-    static const int LIMIT = 25;
+    static const int Limit = 25;
     std::string lname;
-    char fname[LIMIT];
+    char fname[Limit];
 public:
     Person() {
         lname = "";

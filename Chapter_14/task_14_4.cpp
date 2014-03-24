@@ -7,10 +7,10 @@ int main() {
     using std::endl;
     using std::cin;
 
-    const int Size = 5;
+    const size_t Size {5};
     Person * people[Size] {};
 
-    int ct {};
+    size_t ct {};
     for (ct = 0; ct < Size; ++ct) {
         char choice;
         cout << "Enter the person category:\n"
@@ -39,7 +39,7 @@ int main() {
     }
 
     cout << "\nHere is your people:\n";
-    int i {};
+    size_t i {};
     for (i = 0; i < ct; i++) {
         cout << endl;
         people[i]->Show();

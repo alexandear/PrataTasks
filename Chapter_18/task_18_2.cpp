@@ -32,7 +32,7 @@ int main() {
     Cpmv four(one + two);
     Cpmv five;
     five = three + four;
-    std::vector<Cpmv> v;
+    std::vector<Cpmv> v{};
     v.push_back(Cpmv("4321", "3419"));
     cout << "object one: ";
     one.Display();

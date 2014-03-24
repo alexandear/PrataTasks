@@ -11,10 +11,9 @@ int main() {
     const int InchesInFoot {12};
 
     int inches {intInches % InchesInFoot};
+    int feet { (intInches - inches) / InchesInFoot };
 
-    int feet = (intInches - inches) / InchesInFoot;
-
-    cout << "Your height is " << feet << " feet and " << inches << " inches";
+    cout << "Your height is " << feet << " feet and " << inches << " inches\n";
 
     return 0;
 }

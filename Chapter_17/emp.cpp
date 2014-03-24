@@ -4,7 +4,7 @@ using namespace std;
 // abstr_emp methods
 abstr_emp::abstr_emp() : fname("no first name"), lname("no last name"), job("no job") { }
 
-abstr_emp::abstr_emp(const string &fn, const string &ln, const string &j)
+abstr_emp::abstr_emp(const string & fn, const string & ln, const string & j)
     : fname(fn), lname(ln), job(j) { }
 
 abstr_emp::~abstr_emp() { }
@@ -44,7 +44,7 @@ ostream & operator<<(ostream & os, const abstr_emp & e) {
 // employee methods
 employee::employee() : abstr_emp() { }
 
-employee::employee(const string &fn, const string &ln, const string &j)
+employee::employee(const string & fn, const string & ln, const string & j)
     : abstr_emp(fn, ln, j) { }
 
 void employee::ShowAll() const {
@@ -55,7 +55,7 @@ void employee::SetAll() {
     abstr_emp::SetAll();
 }
 
-void employee::GetAll(ifstream &is) {
+void employee::GetAll(ifstream & is) {
     abstr_emp::GetAll(is);
 }
 
@@ -68,12 +68,12 @@ void employee::WriteAll(ofstream & os) const {
 // manager methods
 manager::manager() : abstr_emp() { }
 
-manager::manager(const string &fn, const string &ln, const string &j, int ico)
+manager::manager(const string & fn, const string & ln, const string & j, int ico)
     : abstr_emp(fn, ln, j), inchargeof(ico) { }
 
-manager::manager(const abstr_emp &e, int ico) : abstr_emp(e), inchargeof(ico) { }
+manager::manager(const abstr_emp & e, int ico) : abstr_emp(e), inchargeof(ico) { }
 
-manager::manager(const manager &m)
+manager::manager(const manager & m)
     : abstr_emp(m), inchargeof(m.inchargeof) { }
 
 void manager::ShowAll() const {
@@ -104,12 +104,12 @@ void manager::WriteAll(ofstream & os) const {
 // fink methods
 fink::fink() : abstr_emp() { }
 
-fink::fink(const string &fn, const string &ln, const string &j, const string &rpo)
+fink::fink(const string & fn, const string & ln, const string & j, const string & rpo)
     : abstr_emp(fn, ln, j), reportsto(rpo) { }
 
-fink::fink(const abstr_emp &e, const string &rpo) : abstr_emp(e), reportsto(rpo) { }
+fink::fink(const abstr_emp & e, const string & rpo) : abstr_emp(e), reportsto(rpo) { }
 
-fink::fink(const fink &e) : abstr_emp(e), reportsto(e.ReportsTo()) { }
+fink::fink(const fink & e) : abstr_emp(e), reportsto(e.ReportsTo()) { }
 
 void fink::ShowAll() const {
     abstr_emp::ShowAll();
@@ -122,7 +122,7 @@ void fink::SetAll() {
     getline(cin, reportsto);
 }
 
-void fink::GetAll(ifstream &is) {
+void fink::GetAll(ifstream & is) {
     abstr_emp::GetAll(is);
     getline(is, reportsto);
 }
@@ -136,20 +136,20 @@ void fink::WriteAll(ofstream & os) const {
 // highfink methods
 highfink::highfink() : abstr_emp(), manager(), fink() { }
 
-highfink::highfink(const string &fn, const string &ln, const string &j,
-                   const string &rpo, int ico)
+highfink::highfink(const string & fn, const string & ln, const string & j,
+                   const string & rpo, int ico)
     : abstr_emp(fn, ln, j), manager(fn, ln, j, ico), fink(fn, ln, j, rpo) { }
 
-highfink::highfink(const abstr_emp &e, const string &rpo, int ico)
+highfink::highfink(const abstr_emp & e, const string & rpo, int ico)
     : abstr_emp(e), manager(e, ico), fink(e, rpo) { }
 
 highfink::highfink(const manager &m, const string &rpo)
     : abstr_emp(m), manager(m), fink(m, rpo) { }
 
-highfink::highfink(const fink &f, int ico)
+highfink::highfink(const fink & f, int ico)
     : abstr_emp(f), manager(f, ico), fink(f) { }
 
-highfink::highfink(const highfink &h) : abstr_emp(h), manager(h, h.InChargeOf()),
+highfink::highfink(const highfink & h) : abstr_emp(h), manager(h, h.InChargeOf()),
     fink(h, ReportsTo()) { }
 
 void highfink::ShowAll() const {
@@ -168,7 +168,7 @@ void highfink::SetAll() {
     getline(cin, ReportsTo());
 }
 
-void highfink::GetAll(ifstream &is) {
+void highfink::GetAll(ifstream & is) {
     abstr_emp::GetAll(is);
     is >> InChargeOf();
     getline(is, ReportsTo());

@@ -8,12 +8,12 @@ int main() {
     using std::cin;
     using std::endl;
 
-    double vals1[12] = {
+    double vals1[12] {
         1220, 1100, 1122, 2212, 1232, 2334,
         2884, 2393, 3302, 2922, 3002, 3544
     };
 
-    double vals2[12] = {
+    double vals2[12] {
         12, 11, 22, 21, 32, 34,
         28, 29, 33, 29, 32, 35
     };
@@ -23,7 +23,7 @@ int main() {
 
     cout << "First try block:\n";
     try {
-        int i;
+        size_t i {};
         cout << "Year = " << sales1.Year() << endl;
         for (i = 0; i < 12; ++i) {
             cout << sales1[i] << ' ';

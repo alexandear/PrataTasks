@@ -2,8 +2,8 @@
 #include <string>
 #include <cstring>
 
-const int vowelSize = 5;
-const char vowelArray[vowelSize] = {'a', 'e', 'i', 'o', 'u'};
+const int VowelSize = 5;
+const char VowelArray[VowelSize] = {'a', 'e', 'i', 'o', 'u'};
 
 int main() {
 
@@ -11,10 +11,11 @@ int main() {
 
     cout << "Enter words (q to quit):\n";
 
-    int vowels {};
-    int consonants {};
-    int others {};
+    size_t vowels {};
+    size_t consonants {};
+    size_t others {};
     string word {};
+
     while(cin >> word) {
         if (isalpha(word[0])) {
             if (word.size() == 1 && word[0] == 'q') {
@@ -22,14 +23,14 @@ int main() {
             }
 
             char ch = tolower(word[0]);
-            int i {};
-            for (i = 0; i < vowelSize; ++i) {
-                if (ch == vowelArray[i]) {
+            size_t i {};
+            for (i = 0; i < VowelSize; ++i) {
+                if (ch == VowelArray[i]) {
                     ++vowels;
                     break;
                 }
             }
-            if (i == vowelSize) {
+            if (i == VowelSize) {
                 ++consonants;
           }
         } else {

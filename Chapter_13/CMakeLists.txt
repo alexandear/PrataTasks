@@ -6,7 +6,5 @@ add_executable(task_13_2 task_13_2 cd2.cpp classic2.cpp)
 add_executable(task_13_3 task_13_3 dma.cpp)
 add_executable(task_13_4 task_13_4 port.cpp vintageport.cpp)
 
-ADD_DEFINITIONS(
-    -std=c++11 # Or -std=c++0x
-    # Other flags
-)
+add_definitions(-std=c++11)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wno-long-long -pedantic")

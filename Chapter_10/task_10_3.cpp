@@ -3,8 +3,6 @@
 
 int main() {
 
-    using std::cout;
-
     golf ann("Ann Birdfree", 24);
     ann.showgolf();
 
@@ -12,7 +10,7 @@ int main() {
     if (andy.setgolf()) {
         andy.showgolf();
     } else {
-        cout << "Name is blank\n";
+        std::cout << "Name is blank\n";
     }
 
     return 0;

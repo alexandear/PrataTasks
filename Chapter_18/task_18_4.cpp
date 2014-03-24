@@ -8,7 +8,7 @@ int main() {
     using std::cout;
     using std::endl;
 
-    list<int> yadayada = {50, 100, 90, 180, 60, 210, 415, 88, 188, 201};
+    list<int> yadayada {50, 100, 90, 180, 60, 210, 415, 88, 188, 201};
     list<int> etcetera {50, 100, 90, 180, 60, 210, 415, 88, 188, 201};
     cout << "Original lists:\n";
     auto out = [](int n) {std::cout << n << " ";};

@@ -1,18 +1,18 @@
 #include "dma.h"
 
-const int LEN = 40; // max length of Label, Rating, Color, and Style strings
-const int ITEMS = 4; // total of 4 items to be entered
+const size_t Len {40}; // max length of Label, Rating, Color, and Style strings
+const size_t Items {4}; // total of 4 items to be entered
 
 int main() {
 
     using namespace std;
 
-    char label[LEN] {}, color[LEN] {}, style[LEN] {}, choice {};
+    char label[Len] {}, color[Len] {}, style[Len] {}, choice {};
     int rating {};
 
-    abstractDMA * pt[ITEMS]; // array of abstract base class pointers
+    abstractDMA * pt[Items]; // array of abstract base class pointers
 
-    for (int i = 0; i < ITEMS; i++) {
+    for (size_t i = 0; i < Items; i++) {
         cout << "\nEnter 1 for create baseDMA object, 2 for lacksDMA "
                 "object, 3 for hasDMA object: ";
         while ((cin >> choice).get()
@@ -21,7 +21,7 @@ int main() {
         }
 
         cout << "\nItem #" << i + 1 << " Label: ";
-        cin.getline(label,LEN);
+        cin.getline(label,Len);
         cout << "Item #" << i + 1 << " Rating: ";
         (cin >> rating).get();
 
@@ -32,13 +32,13 @@ int main() {
 
         case '2':
             cout << "Item #" << i + 1 << " Color: "; // lacksDMA class
-            cin.getline(color,LEN);
+            cin.getline(color,Len);
             pt[i] = new lacksDMA(color, label, rating);
             break;
 
         case '3':
             cout << "Item #" << i + 1 << " Style: "; // hasDMA class
-            cin.getline(style,LEN);
+            cin.getline(style,Len);
             pt[i] = new hasDMA(style,label, rating);
             break;
         }
@@ -46,12 +46,12 @@ int main() {
     }
 
     cout << "\nDisplaying entered items:";
-    for (int i = 0; i < ITEMS; i++) {
+    for (size_t i = 0; i < Items; i++) {
         cout << "\n--------";
         cout << *pt[i];
     }
 
-    for (int i = 0; i < ITEMS; i++) {
+    for (size_t i = 0; i < Items; i++) {
         delete pt[i];
     }
 

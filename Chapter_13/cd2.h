@@ -11,7 +11,7 @@ class Cd { // represents a CD disk
     int selections; // number of selections
     double playtime; // playing time in minutes
 public:
-    Cd(char * s1, char * s2, int n, double x);
+    Cd(const char * s1, const char * s2, int n, double x);
     Cd(const Cd & d);
     Cd();
     virtual ~Cd();

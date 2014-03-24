@@ -8,7 +8,7 @@ struct CandyBar {
 };
 
 void setCandyBar(CandyBar & candyBar, char * name = "Millenium Munch",
-                  double weight = 2.85, int calories = 350);
+                  double weight = 2.85, size_t calories = 350);
 void display(const CandyBar *candyBar);
 
 int main() {
@@ -22,7 +22,7 @@ int main() {
     return 0;
 }
 
-void setCandyBar (CandyBar & candyBar, char * name, double weight, int calories) {
+void setCandyBar (CandyBar & candyBar, char * name, double weight, size_t calories) {
     strcpy(candyBar.name, name);
     candyBar.weight = weight;
     candyBar.calories = calories;

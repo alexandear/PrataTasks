@@ -14,7 +14,7 @@ int main() {
 
     cout << "What letter grade do you deserve? ";
     char grade {};
-    cin .get(grade);
+    cin.get(grade);
 
     cout << "What is your age? ";
     size_t age {};
@@ -22,7 +22,7 @@ int main() {
 
     cout << "Name: " << lastName << ", " << firstName << endl;
     (cout << "Grade: ").put(grade + 1) << endl;
-    cout << "Age: " << age;
+    cout << "Age: " << age << endl;
 
     return 0;
 }

@@ -2,13 +2,11 @@
 
 Wine::Wine(const char * l, int y, const int yr[], const int bot[]) :
     std::string(l), years(y), PairArray(ArrayInt(yr, y), ArrayInt(bot, y))
-{
-}
+{ }
 
 Wine::Wine(const char * l, int y) :
     std::string(l), years(y), PairArray(ArrayInt(y), ArrayInt(y))
-{
-}
+{ }
 
 void Wine::GetBottles() {
     std::cout << "Enter " << Label() << " data for " << years << " year (s):\n";

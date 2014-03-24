@@ -19,8 +19,8 @@ int main() {
 
     using namespace std;
 
-    vector<string> vostr;
-    string temp;
+    vector<string> vostr {};
+    string temp {};
 
 // acquire strings
     cout << "Enter strings (empty line to quit):\n";
@@ -35,7 +35,7 @@ int main() {
     fout.close();
 
 // recover file contents
-    vector<string> vistr;
+    vector<string> vistr {};
     ifstream fin(fileName.c_str(), ios_base::in | ios_base::binary);
     if (!fin.is_open()) {
         cerr << "Could not open file for input.\n";
@@ -53,14 +53,14 @@ void ShowStr(const std::string & str) {
 }
 
 void Store::operator ()(const std::string & str) {
-    size_t len = str.size();
+    size_t len {str.size()};
     os.write((char *)&len, sizeof(size_t)); // store length
     os.write(str.data(), len); // store characters
 }
 
 void GetStrs(std::ifstream & is, std::vector<std::string> & vistr) {
     size_t len {};
-    char * data;
+    char * data {};
     while(is.read((char *) &len, sizeof(size_t)) && len > 0) {
         data = new char[len + 1];
         is.read(data, len);

@@ -1,11 +1,11 @@
 #include <iostream>
 
 void display1() {
-    std::cout << "Three blind mice" << std::endl;
+    std::cout << "Three blind mice\n";
 }
 
 void display2() {
-    std::cout << "See how they run" << std::endl;
+    std::cout << "See how they run\n";
 }
 
 int main() {

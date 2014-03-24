@@ -6,10 +6,10 @@ int main() {
 
     using namespace std;
     
-    const int Size = 3;
+    const size_t Size {3};
     Stack st1(Size);
     Item items[Size] {5L, 6L, 7L};
-    for (int i = 0; i < Size; ++i) {
+    for (size_t i = 0; i < Size; ++i) {
         st1.push(items[i]);
     }
     cout << boolalpha << "st1 is full: " << st1.isfull() << endl;

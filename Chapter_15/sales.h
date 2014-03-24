@@ -7,7 +7,7 @@
 class Sales {
 
 public:
-    enum {MONTHS = 12};   // could be a static const
+    enum {Months = 12};   // could be a static const
     class bad_index : public std::logic_error {
     
     private:
@@ -26,7 +26,7 @@ public:
     virtual double operator[](int i) const;
     virtual double & operator[](int i);
 private:
-    double gross[MONTHS];
+    double gross[Months];
     int year;
 };
 

@@ -7,11 +7,11 @@ int main() {
 
     using namespace std;
 
-    const int Max = 10;
+    const size_t Max = 10;
     abstr_emp *pc[Max];
 
     int classType {};
-    int i {};
+    size_t i {};
 
     ifstream fin;
     fin.open(file.c_str());
@@ -37,7 +37,7 @@ int main() {
             pc[i++]->GetAll(fin);
         }
 
-        for (int j = 0; j < i; ++j) {
+        for (size_t j = 0; j < i; ++j) {
             pc[j]->ShowAll();
         }
 
@@ -83,7 +83,7 @@ int main() {
         fout.close();
 
         cout << "\nHere are the current contents of the " << file << " file:\n";
-        for (int j = 0; j < i; ++j) {
+        for (size_t j = 0; j < i; ++j) {
             pc[j]->ShowAll();
         }
 

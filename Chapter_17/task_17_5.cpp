@@ -15,8 +15,8 @@ int main() {
         exit(EXIT_FAILURE);
     }
 
-    set<string> friendsMat, friendsPat;
-    string tmp;
+    set<string> friendsMat {}, friendsPat {};
+    string tmp {};
     while(getline(fin, tmp))
         friendsMat.insert(tmp);
 

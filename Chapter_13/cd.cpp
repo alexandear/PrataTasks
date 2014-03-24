@@ -1,6 +1,6 @@
 #include "cd.h"
 
-Cd::Cd(char * s1, char * s2, int n, double x) {
+Cd::Cd(const char * s1, const char * s2, int n, double x) {
     std::strcpy(performers, s1);
     std::strcpy(label, s2);
     selections = n;
@@ -33,11 +33,11 @@ void Cd::Report() const { // reports all CD data
 }
 
 Cd & Cd::operator=(const Cd & d) {
-    if (this == &d) {
-        return *this;
+    if (this != &d) {
+        std::strcpy(performers, d.performers);
+        std::strcpy(label, d.label);
+        selections = d.selections;
+        playtime = d.playtime;
     }
-    std::strcpy(performers, d.performers);
-    std::strcpy(label, d.label);
-    selections = d.selections;
-    playtime = d.playtime;
+    return *this;
 }

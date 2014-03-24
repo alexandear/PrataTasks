@@ -2,12 +2,12 @@
 #include <cstring>
 #include <iostream>
 
-const int strSize = 20;
+const size_t StrSize {20};
 
 struct bop {
-    char fullName[strSize]; // real name
-    char title[strSize];    // job title
-    char bopName[strSize];  // secret BOP name
+    char fullName[StrSize]; // real name
+    char title[StrSize];    // job title
+    char bopName[StrSize];  // secret BOP name
     int preference;         // 0 = fullname, 1 = title, 2 = bopname
 };
 

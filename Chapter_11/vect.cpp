@@ -11,7 +11,7 @@ using std::cout;
 namespace VECTOR {
 
     // compute degrees in one radian
-    const double Rad_to_deg = 45.0 / atan(1.0);
+    const double Rad_to_deg {45.0 / atan(1.0)};
     // should be about 57.2957795130823
 
     // private methods

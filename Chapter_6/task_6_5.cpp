@@ -4,23 +4,25 @@ int main() {
 
     using namespace std;
 
+    const size_t Size {4};
+    const float Tax[Size] {0, 0.1, 0.15, 0.2};
+    const int Tvarps[Size] {5000, 10000, 20000, 35000};
+
     double earning {};
     cout << "Enter earning in tvarps: ";
     double tax {};
     while(cin >> earning && earning > 0) {
-        if (earning <= 5000.0) {
-            tax = 0.0;
-        } else if (earning <= 15000.0) {
-            tax = (earning - 5000.0) * 0.1;
-        } else if (earning <= 35000.0) {
-            tax = 10000.0 * 0.1 + (earning - 15000.0) * 0.15;
-        } else {
-            tax = 10000.0 * 0.1 + 20000.0 * 0.15 + (earning - 35000.0) * 0.2;
+        for (size_t i = 0; i < Size && earning >=0 ; ++i) {
+            if (i < Size - 1) {
+                earning -= Tvarps[i];
+                tax += Tvarps[i] * Tax[i];
+            } else {
+                tax += earning * Tax[i];
+            }
         }
         cout << "Tax is " << tax << endl;
         cout << "Enter earning in tvarps: ";
     }
-
 
     return 0;
 }

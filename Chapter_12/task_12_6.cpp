@@ -3,7 +3,7 @@
 #include <iostream>
 #include "queue.h"
 
-const int MIN_PER_HR = 60;
+const int MinutesInHour = 60;
 bool newcustomer(double x); // is there a new customer?
 
 int main() {
@@ -17,27 +17,27 @@ int main() {
     std::srand(std::time(0)); // random initializing of rand()
     cout << "Case Study: Bank of Heather Automatic Teller\n";
     cout << "Enter maximum size of queue: ";
-    int qs;
+    int qs {};
     cin >> qs;
     Queue line1(qs); // line queue holds up to qs people
     Queue line2(qs);
     cout << "Enter the number of simulation hours: ";
-    int hours; // hours of simulation
+    int hours {}; // hours of simulation
     cin >> hours;
     // simulation will run 1 cycle per minute
-    long cyclelimit = MIN_PER_HR * hours; // # of cycles
-    double perhour; // average # of arrival per hour
-    double min_per_cust; // average time between arrivals
+    long cyclelimit = MinutesInHour * hours; // # of cycles
+    double perhour {}; // average # of arrival per hour
+    double min_per_cust {}; // average time between arrivals
 
     //Item temp; // new customer data
-    long turnaways = 0; // turned away by full queue
-    long customers = 0; // joined the queue
-    long served = 0; // served during the simulation
-    long sum_line = 0; // cumulative line length
-    int wait_time1 = 0; // time until autoteller is free
-    int wait_time2 = 0;
-    long line_wait = 0; // cumulative time in line
-    double averagewait = 0;
+    long turnaways {}; // turned away by full queue
+    long customers {}; // joined the queue
+    long served {}; // served during the simulation
+    long sum_line {}; // cumulative line length
+    int wait_time1 {}; // time until autoteller is free
+    int wait_time2 {};
+    long line_wait {}; // cumulative time in line
+    double averagewait {};
     // running the simulation, brute force method
     // since values for processing times are random it will take a while, on average 5-10 min of running this program, be patient
     // sometimes it finds value very fast, again, because it's random
@@ -55,7 +55,7 @@ int main() {
 
         //perhour = 0;//std::rand() % 120 + 1; // 120 people max per hour for 2 lines with 1 min of waiting (average),
         // higher numbers produce more randomness and longer time to find the average
-        min_per_cust = MIN_PER_HR / perhour;
+        min_per_cust = MinutesInHour / perhour;
 
         for (int cycle = 0; cycle < cyclelimit; cycle++) {
             if (newcustomer(min_per_cust)) { // have newcomer
@@ -91,7 +91,7 @@ int main() {
             sum_line += line2.queuecount();
         }
 
-        averagewait = (double) line_wait / served;
+        averagewait = double(line_wait / served);
         cout << "\nAverage wait: " << averagewait << ", Customers served: " << served;
 
         perhour++;

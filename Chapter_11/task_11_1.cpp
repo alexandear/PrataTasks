@@ -19,7 +19,7 @@ int main() {
     double dstep {};
 
     ofstream fout;
-    const char * file = "../Chapter_11/randwalk.txt";
+    const char * file {"../Chapter_11/randwalk.txt"};
 
     cout << "Enter target distance (q to quit): ";
     while (cin >> target) {

@@ -4,7 +4,7 @@ int main() {
 
     using namespace std;
 
-    cout << "Enter your height in inches and feet:" << endl;
+    cout << "Enter your height in inches and feet:\n";
     cout << "inches: ___\b\b\b""";
     int intInches {};
 
@@ -24,13 +24,13 @@ int main() {
     const double InchesInMeter {0.0254};
     double meters {inches * InchesInMeter};
 
-    const double poundsInKilogram {2.2};
+    const double PoundsInKilogram {2.2};
 
-    double kilograms {pounds / poundsInKilogram};
+    double kilograms {pounds / PoundsInKilogram};
 
     cout.setf(ios_base::fixed, ios_base::floatfield);
     cout.precision(3);
-    cout << "Your BMI = " << kilograms / (meters * meters);
+    cout << "Your BMI = " << kilograms / (meters * meters) << endl;
 
     return 0;
 }

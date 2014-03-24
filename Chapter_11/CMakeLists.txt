@@ -9,8 +9,5 @@ add_executable(task_11_5 task_11_5 stonewt.cpp)
 add_executable(task_11_6 task_11_6 stonewt6.cpp)
 add_executable(task_11_7 task_11_7 complex0.cpp)
 
-ADD_DEFINITIONS(
-    -std=c++11 # Or -std=c++0x
-    # Other flags
-)
-
+add_definitions(-std=c++11)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Wno-long-long -pedantic")

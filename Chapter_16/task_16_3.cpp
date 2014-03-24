@@ -21,23 +21,23 @@ int main() {
     }
 
     std::vector<string> wordlist;
-    string newword;
+    string newword {};
     while (fin >> newword) {
         wordlist.push_back(newword);
     }
 
     std::srand(std::time(0));
-    char play;
+    char play {};
     cout << "Will you play a word game? <y/n> ";
     cin >> play;
     play = tolower(play);
     while (play == 'y') {
 
-        string target = wordlist[std::rand() % wordlist.size()];
+        string target {wordlist[std::rand() % wordlist.size()]};
         int length = target.length();
         string attempt(length, '-');
         string badchars;
-        int guesses = 6;
+        int guesses {6};
         cout << "Guess my secret word. It has " << length
             << " letters, and you guess\n"
             << "one letter at a time. You get " << guesses
@@ -45,7 +45,7 @@ int main() {
         cout << "Your word: " << attempt << endl;
 
         while (guesses > 0 && attempt != target) {
-            char letter;
+            char letter {};
             cout << "Guess a letter: ";
             cin >> letter;
             if (badchars.find(letter) != string::npos
@@ -53,7 +53,7 @@ int main() {
                 cout << "You already guessed that. Try again.\n";
                     continue;
             }
-            int loc = target.find(letter);
+            size_t loc = target.find(letter);
             if (loc == string::npos) {
                 cout << "Oh, bad guess!\n";
                 --guesses;

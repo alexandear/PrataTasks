@@ -9,11 +9,11 @@ bool Stack::isempty() const {
 }
 
 bool Stack::isfull() const {
-    return top == MAX;
+    return top == Max;
 }
 
 bool Stack::push(const Item & item) {
-    if (top < MAX) {
+    if (top < Max) {
         items[top++] = item;
         return true;
     } else

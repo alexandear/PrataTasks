@@ -6,12 +6,11 @@ double celsiusToFahrenheit(double celsius) {
 
 int main() {
 
-    using namespace std;
-
-    cout << "Please enter a Celsius value: ";
-    auto celsius = 0.0;
-    cin >> celsius;
-    cout << celsius << " degrees Celsius is " << celsiusToFahrenheit(celsius) << " degrees Fahrenheit" << endl;
+    std::cout << "Please enter a Celsius value: ";
+    double celsius {};
+    std::cin >> celsius;
+    std::cout << celsius << " degrees Celsius is " << celsiusToFahrenheit(celsius)
+              << " degrees Fahrenheit\n";
 
     return 0;
 }

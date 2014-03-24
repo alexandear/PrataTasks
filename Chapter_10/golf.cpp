@@ -18,9 +18,9 @@ int golf::setgolf() {
     using std::cin;
     using std::cout;
 
-    char fname[Len] {};
+    char fname[StrSize] {};
     cout << "Enter name: ";
-    cin.getline(fname, Len);
+    cin.getline(fname, StrSize);
     int hc {};
     cout << "Enter handicap: ";
     cin >> hc;

@@ -5,7 +5,7 @@ int main() {
     using namespace std;
 
     cout << "Enter the number of seconds: ";
-    long long inputSeconds{};
+    long long inputSeconds {};
     cin >> inputSeconds;
 
     const int SecondsInMinute {60};
@@ -18,7 +18,7 @@ int main() {
     long long seconds {inputSeconds % SecondsInMinute};
 
     cout << inputSeconds << " seconds = " << days << " days, " << hours << " hours, "
-         << minutes << " minutes, " << seconds << " seconds";
+         << minutes << " minutes, " << seconds << " seconds\n";
 
     return 0;
 }
